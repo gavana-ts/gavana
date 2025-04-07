@@ -4,6 +4,9 @@ export class Model {
     public updatedAt?: Date;
 
     protected attributes: { [key: string]: any } = {};
+    protected fillable: string[] = [];
+    protected casts: {};
+    protected table?: string;
 
     constructor(attributes?: any) {
         if (attributes) {
@@ -19,9 +22,11 @@ export class Model {
         return this.name.toLowerCase();
     }
 
-    async save(): Promise<this> {
+    async save() {
         const db = getDb();
 
     }
+
+    
 
 }
